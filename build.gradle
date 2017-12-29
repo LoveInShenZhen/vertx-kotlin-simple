@@ -62,6 +62,8 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     compile "org.jetbrains.kotlin:kotlin-reflect"
 
+    compile files("conf")
+
     compile group: 'com.github.kklongming', name: 'sz-scaffold', version: 'unspecified'
     compile group: 'com.github.kklongming', name: 'sz-ebean', version: 'unspecified'
     compile group: 'com.github.kklongming', name: 'sz-api-doc', version: 'unspecified'
