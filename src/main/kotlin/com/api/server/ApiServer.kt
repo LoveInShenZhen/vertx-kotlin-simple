@@ -1,6 +1,6 @@
 @file:JvmName("ApiServer")
 
-package com.appserver
+package com.api.server
 
 import sz.SzEbeanConfig
 import sz.scaffold.Application

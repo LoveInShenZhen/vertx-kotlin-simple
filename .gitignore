@@ -1,5 +1,5 @@
 .gradle
-/build/
+build/
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -20,6 +20,8 @@ target/
 .classpath
 .project
 .settings/
+.vscode/
+bin/
 classes/
 RUNNING_PID
 *.iml
