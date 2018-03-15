@@ -1,5 +1,5 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.2.20'
+    id 'org.jetbrains.kotlin.jvm' version '1.2.30'
     id 'application'
 }
 
@@ -25,14 +25,14 @@ compileKotlin {
 distZip {
     into(project.name) {
         from '.'
-        include 'conf/*'
+        include 'conf/**'
     }
 }
 
 distTar {
     into(project.name) {
         from '.'
-        include 'conf/*'
+        include 'conf/**'
     }
 }
 
