@@ -1,17 +1,32 @@
+buildscript {
+    repositories {
+        maven {
+            name "nexus-163"
+            url "http://mirrors.163.com/maven/repository/maven-public/"
+        }
+    }
+    dependencies {
+        classpath "io.ebean:ebean-gradle-plugin:11.10.1"
+    }
+}
+
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.2.41'
     id 'application'
 }
 
+apply plugin: 'io.ebean'
+apply plugin: 'kotlin-kapt'
+
 mainClassName = 'com.api.server.ApiServer'
 
-defaultTasks 'build'
+defaultTasks 'tasks'
 
 repositories {
     mavenLocal()
     maven {
-        name "aliyun-maven"
-        url "http://maven.aliyun.com/nexus/content/groups/public/"
+        name "nexus-163"
+        url "http://mirrors.163.com/maven/repository/maven-public/"
     }
     jcenter()
 }
@@ -68,4 +83,17 @@ dependencies {
     compile group: 'com.github.kklongming', name: 'sz-ebean', version: 'unspecified'
     compile group: 'com.github.kklongming', name: 'sz-api-doc', version: 'unspecified'
     compile group: 'com.github.kklongming', name: 'sz-plan-task', version: 'unspecified'
+
+    kapt "io.ebean:kotlin-querybean-generator:11.4.1"
+}
+
+ebean {
+    debugLevel = 2
+    queryBeans = true
+    kotlin = true
+    generatorVersion = "11.4.1"
+}
+
+sourceSets {
+    main.java.srcDirs += [file("$buildDir/generated/source/kaptKotlin/main")]
 }
