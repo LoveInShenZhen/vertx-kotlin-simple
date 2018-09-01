@@ -11,7 +11,7 @@ buildscript {
 }
 
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.2.41'
+    id 'org.jetbrains.kotlin.jvm' version '1.2.61'
     id 'application'
 }
 
@@ -74,8 +74,8 @@ task usage {
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    compile "org.jetbrains.kotlin:kotlin-reflect"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.61"
+    compile "org.jetbrains.kotlin:kotlin-reflect:1.2.61"
 
     compile files("conf")
 
