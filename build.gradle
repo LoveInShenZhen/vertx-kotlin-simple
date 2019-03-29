@@ -91,5 +91,5 @@ ebean {
 }
 
 sourceSets {
-    main.java.srcDirs += [file("$buildDir/generated/source/kaptKotlin/main")]
+    main.java.srcDirs.add(file("$buildDir/generated/source/kaptKotlin/main"))
 }
